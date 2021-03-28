@@ -27,21 +27,17 @@ Thumbs.db
 nbproject
 *.sublime-project
 *.sublime-workspace
+_site
+.sass-cache
+Gemfile.lock
+*.gem
+*.code-workspace
+.vscode
 
-# Dreamweaver added files
-_notes
-dwsync.xml
+
 
 # Temporary files #
 ###################
 *.autosave
 *(Autosaved)*
 
-# Folders to ignore
-###################
-.hg
-.svn
-.CVS
-intermediate
-publish
-.idea

@@ -1,46 +1,46 @@
-{% comment %} 
-    loaded in : _layouts/default.html
+{% comment %}
+loaded in : _layouts/default.html
 {% endcomment %}
 
-<script src="{{ "/js/coursweb.js" | prepend: site.baseurl }}?ver=20180520"></script>
-<script src="{{ "/js/jquery-3.1.1.min.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/js/magnific-popup/jquery.magnific-popup.min.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/js/coursweb.jquery.js" | prepend: site.baseurl }}?ver=20180520"></script>
+<script src="{{ 'assets/js/coursweb.js' | prepend: site.baseurl }}?ver=20180520"></script>
+<script src="{{ '/assets/js/jquery-3.1.1.min.js' | prepend: site.baseurl }}"></script>
+<script src="{{ '/assets/js/magnific-popup/jquery.magnific-popup.min.js' | prepend: site.baseurl }}"></script>
+<script src="{{ '/assets/js/coursweb.jquery.js' | prepend: site.baseurl }}?ver=20180520"></script>
 <script>
 
-(function (a) {
+  (function (a) {
     a.fn.replaceTagName = function (f) {
-        var g = [],
-            h = this.length;
-        while (h--) {
-            var k = document.createElement(f),
-                b = this[h],
-                d = b.attributes;
-            for (var c = d.length - 1; c >= 0; c--) {
-                var j = d[c];
-                k.setAttribute(j.name, j.value)
-            }
-            k.innerHTML = b.innerHTML;
-            a(b).after(k).remove();
-            g[h - 1] = k
+      var g = [],
+        h = this.length;
+      while (h--) {
+        var k = document.createElement(f),
+          b = this[h],
+          d = b.attributes;
+        for (var c = d.length - 1; c >= 0; c--) {
+          var j = d[c];
+          k.setAttribute(j.name, j.value)
         }
-        return a(g)
+        k.innerHTML = b.innerHTML;
+        a(b).after(k).remove();
+        g[h - 1] = k
+      }
+      return a(g)
     }
-})(window.jQuery);
+  })(window.jQuery);
 
-$(document).ready(function() {
+  $(document).ready(function () {
 
-/*
-// Show Github Contributors
-*/
+    /*
+    // Show Github Contributors
+    */
 
-  {% assign path_parts = page.path | split: '/' %}
-        
-        {% if path_parts[0] contains 'cours-' %}
-            {% assign giturl = 'coursweb' %}
-        {% endif %}
+    {% assign path_parts = page.path | split: '/' %}
 
-  {% if giturl %}
+    {% if path_parts[0] contains 'cours-' %}
+    {% assign giturl = 'coursweb' %}
+    {% endif %}
+
+    {% if giturl %}
 
     /* 
     Charger dynamiquement depuis Github la 
@@ -49,8 +49,8 @@ $(document).ready(function() {
     Méthode: jQuery.getJSON()
     */
 
-    (function() {
-      
+    (function () {
+
       var GithubAPI = "https://api.github.com/repos/coursweb/{{ path_parts[0] }}/commits?path={{ path_parts[1] }}";
 
       /* 
@@ -63,154 +63,155 @@ $(document).ready(function() {
       // obj.length
       */
 
-      $.getJSON( GithubAPI )
-        .done(function( data ) {
+      $.getJSON(GithubAPI)
+        .done(function (data) {
+
+          /* 
+          console.log('loaded!:'+data.length);
+          console.log(data);
+          */
+
+          var authors = []; /* liste complète des contributions */
+          var authornames = []; /*  pour filtrer les doublons */
+
+          /* 
+          // TODO: test if authors has more than 1 person, otherwise skip.
+          */
+
+          authors.push("<h3>Ont contribué à cette page:</h3>");
+
+          /* The push() method adds new items to the end of an array */
+
+          $.each(data, function (index, item) {
 
             /* 
-            console.log('loaded!:'+data.length);
-            console.log(data);
+            This loops through each commit (=item) 
             */
 
-            var authors = []; /* liste complète des contributions */
-            var authornames = []; /*  pour filtrer les doublons */
+            if (item.author) {
 
-            /* 
-            // TODO: test if authors has more than 1 person, otherwise skip.
-            */
+              /* 
+              Testing if author is already in list.
+              Method: str.indexOf()
+              Returns position in Array (0 to N).
+              Returns -1 if the value to search for never occurs. 
+              */
 
-            authors.push( "<h3>Ont contribué à cette page:</h3>");
+              if (authornames.indexOf(item.author.login) < 0) {
 
-            /* The push() method adds new items to the end of an array */
+                /* 1) create markup. */
+                authors.push("<li><span>" + item.author.login + "</span><a href='" + item.author.html_url + "'><img src='" + item.author.avatar_url + "' /></a></li>");
 
-            $.each(data, function(index, item) {
+                /* 2) add name to list of authors */
+                authornames.push(item.author.login);
 
-                /* 
-                This loops through each commit (=item) 
-                */
+              }
+            }
+          });
 
-                if(item.author) {
-                    
-                /* 
-                Testing if author is already in list.
-                Method: str.indexOf()
-                Returns position in Array (0 to N).
-                Returns -1 if the value to search for never occurs. 
-                */
 
-                  if ( authornames.indexOf( item.author.login ) < 0 ) {
-
-                    /* 1) create markup. */
-                    authors.push( "<li><span>" + item.author.login + "</span><a href='"+item.author.html_url+"'><img src='"+item.author.avatar_url+"' /></a></li>" );
-                    
-                    /* 2) add name to list of authors */
-                    authornames.push( item.author.login );
-
-                  }
-                }
-            });
-            
-
-          $( "<ul/>", {
+          $("<ul/>", {
             "class": "contributors",
-            html: authors.join( "" )
-          }).appendTo( "#post-footer" );
+            html: authors.join("")
+          }).appendTo("#post-footer");
 
         });
 
     })();
 
-  {% endif %}
+    {% endif %}
 
 
-  $( "#slideshow" ).click(function(e) {
+    $("#slideshow").click(function (e) {
 
-    e.preventDefault();
+      e.preventDefault();
 
+
+      /*  remove all original stylesheets: */
+
+      $('link[rel=stylesheet]').remove();
+
+      $("<link/>", {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "/reveal.js/css/reveal.css"
+      }).appendTo("head");
+
+      $("<link/>", {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "/reveal.js/css/theme/solarized.css"
+      }).appendTo("head");
+
+      $("<link/>", {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "/reveal.js/lib/css/zenburn.css"
+      }).appendTo("head");
+
+      /* methode: https://stackoverflow.com/questions/11803215/  */
+
+      /* Manipulate content */
+
+      /* Move title into slides */
+
+      var SlideshowTitle = $("h1.post-title").clone();
+      SlideshowTitle.prependTo("#post-content");
+
+      /* remove content */
+
+      $(".site-header").remove();
+      $(".secondary-menu").remove();
+      $(".site-footer").remove();
+      $(".post-header").remove();
+      $("#post-footer").remove();
+      $("#post-content > hr").remove();
+
+      /* create sections */
+
+      $("#post-content > div, #post-content > p, #post-content > blockquote, #post-content > h1, #post-content > h2, #post-content > h3, #post-content > h4, #post-content > iframe, #post-content > table").wrap("<section></section>");
+
+      /* 
   
-    /*  remove all original stylesheets: */
+      Lists items : need to be transformed into nested slides.
+  
+      Also possible, but may place too much content on screen:
+  
+      $( "#post-content li:not(:first-child)" ).addClass( "fragment" );     
+  
+      */
 
-    $('link[rel=stylesheet]').remove();
+      $("#post-content > ul > li, #post-content > ol > li").replaceTagName("section");
 
-    $("<link/>", {
-       rel: "stylesheet",
-       type: "text/css",
-       href: "/reveal.js/css/reveal.css"
-    }).appendTo("head");
+      $("#post-content > ul, #post-content > ol").replaceTagName("section");
 
-    $("<link/>", {
-       rel: "stylesheet",
-       type: "text/css",
-       href: "/reveal.js/css/theme/solarized.css"
-    }).appendTo("head");
+      $.when(
+        $.getScript("/reveal.js/lib/js/head.min.js"),
+        $.getScript("/reveal.js/js/reveal.js"),
+        $.Deferred(function (deferred) {
+          $(deferred.resolve);
+        })
+      ).done(function () {
 
-    $("<link/>", {
-       rel: "stylesheet",
-       type: "text/css",
-       href: "/reveal.js/lib/css/zenburn.css"
-    }).appendTo("head");
+        /* when the scripts are all loaded: */
 
-    /* methode: https://stackoverflow.com/questions/11803215/  */
+        Reveal.initialize({
 
-    /* Manipulate content */
+          width: "90%",
+          height: "100%",
+          margin: 0.2,
+          minScale: 0.5,
+          maxScale: 1,
+          backgroundTransition: 'zoom'
+        });
 
-    /* Move title into slides */
+        $(".reveal.center").css({
+          "height": "95hv"
+        });
 
-    var SlideshowTitle = $("h1.post-title").clone();
-    SlideshowTitle.prependTo("#post-content");
-
-    /* remove content */
-
-    $(".site-header").remove();
-    $(".secondary-menu").remove();
-    $(".site-footer").remove();
-    $(".post-header").remove();
-    $("#post-footer").remove();
-    $("#post-content > hr").remove();
-
-    /* create sections */
-
-    $( "#post-content > div, #post-content > p, #post-content > blockquote, #post-content > h1, #post-content > h2, #post-content > h3, #post-content > h4, #post-content > iframe, #post-content > table" ).wrap( "<section></section>" );
-
-    /* 
-
-    Lists items : need to be transformed into nested slides.
-
-    Also possible, but may place too much content on screen:
-
-    $( "#post-content li:not(:first-child)" ).addClass( "fragment" );     
-
-    */
-
-    $("#post-content > ul > li, #post-content > ol > li").replaceTagName("section");
-
-    $("#post-content > ul, #post-content > ol").replaceTagName("section");
-
-    $.when(
-      $.getScript( "/reveal.js/lib/js/head.min.js" ),
-      $.getScript( "/reveal.js/js/reveal.js" ),
-      $.Deferred(function( deferred ){
-          $( deferred.resolve );
-      })
-    ).done(function(){
-
-    /* when the scripts are all loaded: */
-
-      Reveal.initialize({
-
-            width: "90%",
-            height: "100%",
-            margin: 0.2,
-            minScale: 0.5,
-            maxScale: 1,
-            backgroundTransition: 'zoom'
       });
-
-      $(".reveal.center").css({ 
-      "height": "95hv" });
 
     });
 
-  });  
-
-});
+  });
 </script>

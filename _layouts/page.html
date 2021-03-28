@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<article class="post reveal">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+  </header>
+
+  <div id="post-content" class="post-content slides">
+    {{ content }}
+  </div>
+  
+  <footer id="post-footer">
+  <ul class="source">
+	
+		{% assign path_parts = page.path | split: '/' %}
+		
+		{% if path_parts[0] contains 'cours-' %}
+			{% assign giturl = 'https://github.com/coursweb/' %}
+		{% endif %}
+
+  		{% if giturl %}
+  			<li><a class="edit-link" href="{{ giturl }}{{ path_parts[0] }}/edit/master/{{ path_parts[1] }}">modifier cette page sur GitHub</a></li>
+  		{% endif %}
+
+    <li><a id="slideshow" class="slideshow-link" href="#">slideshow</a></li>
+
+  </ul>
+  </footer>
+
+</article>

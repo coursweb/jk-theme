@@ -1,0 +1,25 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body{% if page.url == '/' %} class="homepage"{% endif %}>
+
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+      {% include nav-second.html %}
+    </div>
+
+    {% include footer.html %}
+  
+  {% include script.html %}
+  </body>
+  
+</html>

@@ -1,0 +1,163 @@
+/*
+ Base Style Overrides
+*/
+
+h1, h2, h3, h4, h5, h6 {
+	color: $grey-color-dark
+}
+
+hr {
+	margin-top: 1.5em;
+	margin-bottom: 2em;
+	border: none;
+    height: 2px;
+    background-color: $grey-color-pale;
+}
+
+
+figcaption {
+	font-style: normal;
+	font-size: 0.85em;
+	padding-left: 0em;
+	color: $grey-color;
+}
+
+
+
+
+.page-content {
+	// clear: left;
+	padding-top: 30px; /* Overridden by MediaQuery */
+}
+
+.post-content img {
+	margin: 0.5em 0;
+	max-height: 45vh;
+	cursor: zoom-in;
+}
+
+
+.post-content img.large-image {
+	max-height: 100%;
+	cursor: auto;
+}
+
+.mfp-figure figure,
+.mfp-content img.mfp-img {
+	border: 0;
+}
+
+.post-content tbody {
+	vertical-align: top;
+}
+
+.post-content table {
+	margin-bottom: 2.5em
+}
+
+.post-content tbody td:first-of-type code {
+	display: block;
+	margin-right: 1em;
+}
+
+img + br + em {
+	// margin-top: -2em;
+	display: block;
+}
+
+img + br {
+}
+
+.post-content em a {
+	font-weight: 700;
+}
+
+.post-content .footnotes::before {
+	content: 'Notes';
+	display: block;
+	font-size: 140%;
+	font-weight: 700;
+	margin: 2.5em 0 1em 0;
+	padding-bottom: 0.5em;
+	border-bottom: 2px solid $grey-color-pale;
+}
+
+.post-content .footnotes {
+	font-size: 90%;
+	line-height: 1.2;
+}
+
+.site-header .wrapper {
+	max-width: 100%;
+  @include media-query($on-laptop) {
+    max-width: 100%;
+  }
+}
+
+.lettrine:first-letter {
+  font-size: 200%;
+  float: left;
+}
+
+
+
+/* 
+ * Media Queries 
+ */
+
+@media screen and (max-width: 799px),
+       screen and (max-height: 599px) { 
+
+
+  .page-content {
+    padding-bottom: 0;
+  }
+
+  .site-header,
+  .site-footer {
+    border: 0;
+  }
+
+
+}
+
+
+@media screen 
+  and (min-width: 800px) { 
+
+  .homepage .page-content {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .homepage .wrapper {
+    max-width: calc(100% - (30px * 2));
+    margin-left: 0;
+    padding-right: 15px;
+  }
+
+}
+
+
+@media screen 
+  and (min-width: 800px)  
+  and (min-height: 600px) { 
+
+
+  .page-content {
+      // padding-top: $spacing-unit;
+  }
+  
+  .page-content,
+  .site-footer {
+    // width: $content-ratio;
+    // max-width: 100%;
+    // padding-left: $sidebar-ratio;
+  }
+
+  
+  
+} /*end min W 800px H 600px */
+
+
+

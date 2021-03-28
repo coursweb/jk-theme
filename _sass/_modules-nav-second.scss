@@ -1,0 +1,190 @@
+
+/* Secondary Navigation */
+
+
+/**
+ * Secondary Menu
+ */
+
+.second-menu {
+  
+    @extend %clearfix;
+
+    border-bottom: 1px solid $grey-color-light;
+    padding-bottom: 15px;
+
+    ul {
+      padding-left: 1em;
+      color: $grey-color-pale;
+      margin-left: -0.4em;
+    }
+    
+    li {
+
+      list-style-type: none;
+      float: left;
+
+      &:after {
+        content: "— ";
+      }
+
+      &:last-of-type:after {
+        content: none;
+      }
+
+    }
+
+    a {
+      padding: 0.2em 0.5em 0.2em 0.5em;
+      color: black;
+      display: inline;
+    }
+
+    .active {
+      color: darken($brand-color, 15%);
+    }
+
+} /* .second-menu */
+
+.page-content .secondary-menu {
+  
+  border-top: 1px solid $grey-color-light;
+  
+}
+
+.page-content .second-menu {
+  
+  border-bottom: 0;
+  margin-top: $spacing-unit;
+}
+
+
+
+/* 
+ * Media Queries 
+ */
+
+/* 
+ * Small Screens 
+ * 
+ * We show the second menu at the top and bottom of the content.
+ *
+ */
+
+@media screen and (max-width: 799px),
+       screen and (max-height: 599px) { 
+
+  .second-menu {
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #828282;
+    
+    li {
+      margin: 0.5em 0.3em;
+
+      &:after {
+        content: '';
+      }
+    }
+
+    a {
+      color: #fff;
+      background-color: #545454;
+      border-radius: 0.2em;
+      padding: 0.3em 0.6em;
+
+      
+      &.active {
+        background-color: $brand-color;
+        color: #fff;
+      }
+
+      &:hover {
+        background-color: $contrast-color;
+        text-decoration: none;
+      }
+
+    }
+
+  } /* .second-menu */
+
+  .page-content .secondary-menu {
+    border: 0;
+  }
+
+}
+
+/* 
+ * Large Screens 
+ * 
+ * We show the menu in the sidebar, and hide it in the footer
+ *
+ */
+
+@media screen 
+  and (min-width: $on-laptop)  
+  and (min-height: 600px) { 
+
+  .secondary-menu {
+    width: $sidebar-ratio;
+    float: left; 
+    // position: fixed;
+    background: $background-color;
+    padding-top: 30px;
+  }
+  
+  .second-menu {
+    
+    border-bottom: 0px;
+    
+    ul {
+      margin-left: $spacing-unit;
+    }
+    
+    li {
+        list-style-type: decimal;
+        float: none;
+      
+      &:after {
+        content: none;
+      }
+
+    }
+          
+    a {
+      display: block;
+    }
+    
+    .active {
+      text-decoration: underline;
+    }
+
+  } /* .second-menu */
+  
+  /* Hide menu in footer */
+  .page-content .secondary-menu {
+    display: none; 
+  }
+  
+  .page-content {
+    padding-top: $spacing-unit;
+    float: right;
+    clear: none;
+    padding-left: 0; /* overriden in _overrides.scss */
+  }
+  
+  .page-content,
+  .site-footer {
+    width: $content-ratio;
+    max-width: 100%;
+  }
+
+  .site-footer {
+    clear: both;
+    padding-left: $sidebar-ratio;
+  }
+
+  
+} /*end min W 800px H 600px */
+

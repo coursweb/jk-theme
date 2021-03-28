@@ -1,0 +1,46 @@
+{% comment %}
+  
+  This file produces the 2nd level menu.
+
+  Our method:
+
+  1: we produce an array of chapter URLs.
+  2: we compare it with URL of current page.
+
+{% endcomment %}
+
+{% assign chapter_urls = "" %}
+
+{% for chapter in site.chapters %}
+  {% assign chapter_urls = chapter_urls | append: ',' | append: chapter.url %}
+{% endfor %}
+
+{% assign chapter_urls = chapter_urls | split: ',' %}
+
+  {%  if chapter_urls contains url_parts[1] %}
+      
+      <nav class="secondary-menu">
+      <div class="second-menu">
+        <ul>
+        
+    {% assign base_url = page.url %}
+    
+    {% for node in site.pages %}
+      {% if node.title %}
+        {% assign node_url_parts = node.url | split: '/' %}
+        {% assign node_url_parts_size = node_url_parts | size %}
+        
+        {% if node_url_parts[1] == url_parts[1] %}
+        
+            <li><a class="{% if node.url == page.url %} active{% endif %}" href='{{ node.url | prepend: site.baseurl }}'>{{node.title}}</a></li>
+        {% endif %}
+
+      {% endif %}
+    {% endfor %}
+
+        </ul>
+      </div>
+      </nav>
+
+  {% endif %}
+

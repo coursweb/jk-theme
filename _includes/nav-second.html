@@ -14,8 +14,10 @@
         <ul>
         
     {% assign base_url = page.url %}
+
+    {% assign allpages = site.pages | where: "layout", "page" | sort: "order" %}
     
-    {% for node in site.pages %}
+    {% for node in allpages %}
       {% if node.title %}
         {% assign node_url_parts = node.url | split: '/' %}
         {% assign node_url_parts_size = node_url_parts | size %}

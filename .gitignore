@@ -41,3 +41,7 @@ Gemfile.lock
 *.autosave
 *(Autosaved)*
 
+# Binary source files #
+###################
+*.pxm
+*.psd

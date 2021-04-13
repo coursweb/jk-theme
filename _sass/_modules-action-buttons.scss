@@ -17,7 +17,7 @@
     }
 
     .source {
-        display: none;
+        display: block;
         position: fixed;
         top: 45%;
         top: calc(50vh - 3.5rem);
@@ -61,13 +61,13 @@
     }
 
     .edit-link {
-        background-image: url('/img/edit-link-2.png');
+        background-image: url('../img/edit-link-2.png');
         
     }
 
     .slideshow-link {
         top: 4rem;
-        background-image: url('/img/slideshow-link-2.png');
+        background-image: url('../img/slideshow-link-2.png');
     }
 
     .edit-link:hover,

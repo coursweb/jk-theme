@@ -22,7 +22,7 @@ $(document).ready(function() {
     verticalFit: true
   });
 
-  /* Show Edit Icons */
+  /* Show Edit Icons when scrolling */
 
 if (document.documentElement.clientWidth > 600) {
 

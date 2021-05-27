@@ -67,7 +67,7 @@ $(document).ready(function () {
 
     /* create sections */
 
-    $("#post-content > div, #post-content > p, #post-content > blockquote, #post-content > h1, #post-content > h2, #post-content > h3, #post-content > h4, #post-content > iframe, #post-content > table").wrap("<section></section>");
+    $("#post-content > div, #post-content > p, #post-content > blockquote, #post-content > h1, #post-content > h2, #post-content > h3, #post-content > h4, #post-content > iframe, #post-content > table, #post-content > pre").wrap("<section></section>");
 
     /* 
 

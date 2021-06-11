@@ -1,0 +1,79 @@
+/*
+ * Print styles
+
+ * Some rules from https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/style.css
+*/
+
+@media print {
+
+  /*
+  * Print optimization from HTML5 Boilerplate
+  */
+
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  /*
+  * Hide elements from print view
+  */
+  .site-nav,
+  .secondary-menu,
+  .site-footer {
+    display: none;
+  }
+
+  .site-header {
+    border-top: 0px;
+  }
+
+  body {
+    font-size: 12px;
+  }
+  .post-title {
+    font-size: 26px;
+    letter-spacing: 0;
+  }
+
+  .post-content h1 {
+    font-size: 22px;
+  }
+  .post-content h2 {
+    font-size: 18px;
+  }
+
+  .post-content h3,
+  .post-content h4,
+  .post-content h5,
+  .post-content h6 {
+    font-size: 16px;
+  }
+
+}

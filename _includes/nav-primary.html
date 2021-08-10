@@ -8,7 +8,7 @@
 {% endcomment %}
 {% for chapter in site.chapters %}
   
-  <a class="page-link {% if chapter.url == site.baseurl %}  active{% endif %}" data-url="{{ page_url_this }}" href="{{ chapter.url }}">{{ chapter.title }}</a>
+  <a class="page-link {% if chapter.url == site.baseurl %}  active{% endif %}" data-url="{{ site.baseurl }}" href="{{ chapter.url }}">{{ chapter.title }}</a>
 
 {% endfor %}
 {% comment %} 

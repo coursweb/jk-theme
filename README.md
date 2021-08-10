@@ -12,7 +12,7 @@ Pour utiliser ce thème dans un site [Github Pages](https://cours-web.ch/git/git
 remote_theme: coursweb/jk-theme
 ```
 
-## Fonctionnement des menus
+## Configurer les menus
 
 Ce thème produit deux menus de navigation:
 
@@ -27,6 +27,18 @@ chapters:
    url: https://cours-web.ch/
  - title: Serveurs
    url: https://cours-web.ch/serveurs/
+```
+
+## Configurer le pied de page
+
+Le pied de page est divisé en trois colonnes. Le contenu peut être renseigné dans `_config.yml` de la façon suivante:
+
+```
+footer_col_1: <ul class="contact-list">
+  <li>Contact Information</li>
+  <li>2017–2021</li></ul>
+footer_col_2: <ul class="social-media-list"><li><a href="https://github.com/github-link">Github Link</a></li></ul>
+footer_col_3: Un cours sur diverses procédures pour gérer un serveur web.
 ```
 
 ## Licence

@@ -6,10 +6,27 @@ Quelques fonctionnalités
 
 ## Utiliser ce thème avec Github Pages
 
-Pour utiliser ce thème dans un site [Github Pages](https://cours-web.ch/git/github-pages.html), il suffit d'ajouter la ligne suivante dans le fichier _config.yml :
+Pour utiliser ce thème dans un site [Github Pages](https://cours-web.ch/git/github-pages.html), il suffit d'ajouter la ligne suivante dans le fichier `_config.yml` :
 
 ```
 remote_theme: coursweb/jk-theme
+```
+
+## Fonctionnement des menus
+
+Ce thème produit deux menus de navigation:
+
+- Un menu de **premier niveau**, destiné à envoyer vers d'autres cours ou à un index global. Configurable dans `_config.yml`.
+- Un menu de **deuxième niveau**, qui contient les différentes pages du support de cours. Toutes les pages utilisant "layout: page" seront prises en compte.
+
+Pour le menu de premier niveau, voici comment déclarer les pages:
+
+```
+chapters:
+ - title: Cours-web
+   url: https://cours-web.ch/
+ - title: Serveurs
+   url: https://cours-web.ch/serveurs/
 ```
 
 ## Licence

@@ -9,8 +9,9 @@
 {% for chapter in site.chapters %}
   
   {% assign page_url_parts = page.url| split: '/' %}
+  {% assign page_url_this = page_url_parts[0] | append: page_url_parts[1] %}
   
-  <a class="page-link {% if chapter.url == page_url_parts[1] %}  active{% endif %}" href="{{ chapter.url }}">{{ chapter.title }}</a>
+  <a class="page-link {% if chapter.url == page_url_this %}  active{% endif %}" href="{{ chapter.url }}">{{ chapter.title }}</a>
 
 {% endfor %}
 {% comment %} 

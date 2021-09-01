@@ -14,7 +14,7 @@
       </div>
 
       <div class="footer-col footer-col-3">
-        {{ site.footer_col_3 }}
+        {% if site.footer_col_3 %}{{ site.footer_col_3 }}{% else %}{{ site.description }}{% endif %}
       </div>
     </div>
 

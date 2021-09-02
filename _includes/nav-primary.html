@@ -7,7 +7,7 @@
 
 {% endcomment %}
 
-{% assign page_url_this = site.url | append: site.baseurl %}
+{% assign page_url_this = site.url | append: site.baseurl | append: "/" %}
 
 {% for chapter in site.chapters %}
   

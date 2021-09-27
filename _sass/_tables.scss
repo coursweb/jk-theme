@@ -1,0 +1,27 @@
+table,
+th, 
+td {
+  border: 1px solid $grey-color-pale;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  font-weight: normal;
+  color: white;
+  background-color: $brand-color;
+}
+
+th, 
+td {
+  padding: 0.3em 0.5em;
+}
+
+/* Striped Tables */
+
+tr:nth-child(even) {
+  background-color: #f3f3f3;
+}

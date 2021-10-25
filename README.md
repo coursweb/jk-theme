@@ -41,6 +41,14 @@ footer_col_2: <ul class="social-media-list"><li><a href="https://github.com/gith
 footer_col_3: Un cours sur diverses procédures pour gérer un serveur web.
 ```
 
+## Bloquer l'indexation
+
+L'indexation par les moteurs de recherche peut être empêchée en ajoutant le paramètre suivant à `_config.yml`:
+
+```
+robots: noindex, nofollow
+```
+
 ## Licence
 
 Ce thème est sous licence MIT, il est donc open-source. C'est la licence généralement utilisée par les thèmes Jekyll.

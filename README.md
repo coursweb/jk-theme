@@ -53,6 +53,10 @@ robots: noindex, nofollow
 
 Ce thème est sous licence MIT, il est donc open-source. C'est la licence généralement utilisée par les thèmes Jekyll.
 
+## Processeur Markdown
+
+Il est possible de spécifier le processeur dans `_config.yml`, avec cette ligne: `markdown: GFM`. Cette variante nommée GitHub-flavored Markdown (GFM) a quelques avantages, notamment: chaque URL devient un lien, même sans la syntaxe markdown. Parmi les inconvénients: certaines balises sont prohibées, comme la balise `iframe`. Cela rend impossible l'intégration de vidéos Youtube.
+
 ## Liens
 
 - Documentation Jekyll: https://jekyllrb.com/docs/themes/

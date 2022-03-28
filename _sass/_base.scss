@@ -135,9 +135,9 @@ blockquote {
     background-color: #e7fff5;
     border-left: 4px solid $brand-color;
     padding: $spacing-unit / 2;
-    font-size: 140%;
-    font-size: 1.1rem;
-    font-weight: 200;
+    // font-size: 140%;
+    // font-size: 1.1rem;
+    // font-weight: 200;
     // font-family: $serif-font-family;
     // letter-spacing: -1px;
     font-style: normal;
@@ -145,7 +145,7 @@ blockquote {
 
     @include media-query($on-laptop) {
         // means: up to 800px
-        font-size: 110%;
+        // font-size: 110%;
     }
 
     > :last-child {

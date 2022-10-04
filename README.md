@@ -6,10 +6,33 @@ Quelques fonctionnalités
 
 ## Utiliser ce thème avec Github Pages
 
-Pour utiliser ce thème dans un site [Github Pages](https://cours-web.ch/git/github-pages.html), il suffit d'ajouter la ligne suivante dans le fichier `_config.yml` :
+Pour utiliser ce thème dans un site [Github Pages](https://cours-web.ch/git/github-pages.html), ajouter le code suivant dans le fichier `_config.yml` :
 
 ```
 remote_theme: coursweb/jk-theme
+
+title: Titre exemple
+
+description: Description de cet exemple
+
+lang: fr-FR
+
+robots: noindex, nofollow
+
+# menu 
+chapters:
+ - title: Référence CSS
+   url: https://cours-web.ch/css/
+ - title: Infos IMD
+   url: https://eracom.ch/informations-eleves-id/
+ - title: MDN
+   url: 
+
+# pied de page   
+footer_col_1: <ul class="contact-list">
+  <li>Eracom, Lausanne</li>
+  <li>2022</li></ul>
+footer_col_2: <ul class="social-media-list"><li><a href="https://github.com/">Lien Github</a></li></ul>
 ```
 
 ## Configurer les menus

@@ -21,12 +21,10 @@ robots: noindex, nofollow
 
 # menu 
 chapters:
- - title: Référence CSS
-   url: https://cours-web.ch/css/
- - title: Infos IMD
-   url: https://eracom.ch/informations-eleves-id/
+ - title: Cours-Web
+   url: https://cours-web.ch/
  - title: MDN
-   url: 
+   url: https://developer.mozilla.org/fr/
 
 # pied de page   
 footer_col_1: <ul class="contact-list">
@@ -79,8 +77,8 @@ Pour ajouter des pages au site, vous devez créer des fichiers au format Markdow
 ```
 ---
 layout: page
-title: Typographie
-permalink: index.html
+title: Titre de la page
+permalink: url-de-la-page.html
 ---
 ```
 

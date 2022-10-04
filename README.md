@@ -72,6 +72,22 @@ L'indexation par les moteurs de recherche peut être empêchée en ajoutant le p
 robots: noindex, nofollow
 ```
 
+## Créer des pages
+
+Pour ajouter des pages au site, vous devez créer des fichiers au format Markdown. Ces fichiers devront avoir l'extention `.md`, et doivent commencer par quelques lignes de code selon le format suivant:
+
+```
+---
+layout: page
+title: Typographie
+permalink: index.html
+---
+```
+
+L'ordre des pages est purement alphabétique. Vous pouvez utiliser une numérotation (dans les noms de fichiers) pour déterminer l'ordre, par exemple: `10-typographie.md`, `20-webfonts.md`, `30-sources.md`, etc.
+
+Important: La page que vous utilisez comme page d'accueil devra avoir comme valeur `permalink: index.html`.
+
 ## Licence
 
 Ce thème est sous licence MIT, il est donc open-source. C'est la licence généralement utilisée par les thèmes Jekyll.

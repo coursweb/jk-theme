@@ -38,7 +38,7 @@ footer_col_2: <ul class="social-media-list"><li><a href="https://github.com/">Li
 Ce thème produit deux menus de navigation:
 
 - Un menu de **premier niveau**, destiné à envoyer vers d'autres cours ou à un index global. Configurable dans `_config.yml`.
-- Un menu de **deuxième niveau**, qui contient les différentes pages du support de cours. Toutes les pages utilisant "layout: page" seront prises en compte.
+- Un menu de **deuxième niveau**, qui contient les différentes pages du site. Toutes les pages utilisant `layout: page` sont automatiquement prises en compte.
 
 Pour le menu de premier niveau, voici comment déclarer les pages:
 
@@ -50,25 +50,6 @@ chapters:
    url: https://cours-web.ch/serveurs/
 ```
 
-## Configurer le pied de page
-
-Le pied de page est divisé en trois colonnes. Le contenu peut être renseigné dans `_config.yml` de la façon suivante:
-
-```
-footer_col_1: <ul class="contact-list">
-  <li>Contact Information</li>
-  <li>2017–2021</li></ul>
-footer_col_2: <ul class="social-media-list"><li><a href="https://github.com/github-link">Github Link</a></li></ul>
-footer_col_3: Un cours sur diverses procédures pour gérer un serveur web.
-```
-
-## Bloquer l'indexation
-
-L'indexation par les moteurs de recherche peut être empêchée en ajoutant le paramètre suivant à `_config.yml`:
-
-```
-robots: noindex, nofollow
-```
 
 ## Créer des pages
 
@@ -89,6 +70,26 @@ L'ordre des pages est purement alphabétique. Vous pouvez utiliser une numérota
 ⚠️ **Important:** La page que vous utilisez comme page d'accueil devra avoir comme valeur `permalink: index.html`.
 
 Pour voir des exemples, vous pouvez consulter les différents dossiers sous https://github.com/coursweb
+
+## Configurer le pied de page
+
+Le pied de page est divisé en trois colonnes. Le contenu peut être renseigné dans `_config.yml` de la façon suivante:
+
+```
+footer_col_1: <ul class="contact-list">
+  <li>Contact Information</li>
+  <li>2017–2021</li></ul>
+footer_col_2: <ul class="social-media-list"><li><a href="https://github.com/github-link">Github Link</a></li></ul>
+footer_col_3: Un cours sur diverses procédures pour gérer un serveur web.
+```
+
+## Bloquer l'indexation
+
+L'indexation par les moteurs de recherche peut être empêchée en ajoutant le paramètre suivant à `_config.yml`:
+
+```
+robots: noindex, nofollow
+```
 
 ## Licence
 

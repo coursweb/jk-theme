@@ -88,6 +88,8 @@ L'ordre des pages est purement alphabétique. Vous pouvez utiliser une numérota
 
 Important: La page que vous utilisez comme page d'accueil devra avoir comme valeur `permalink: index.html`.
 
+Pour voir des exemples, vous pouvez consulter les différents dossiers sous https://github.com/coursweb
+
 ## Licence
 
 Ce thème est sous licence MIT, il est donc open-source. C'est la licence généralement utilisée par les thèmes Jekyll.

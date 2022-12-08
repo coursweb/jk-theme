@@ -67,7 +67,7 @@ Le paramètre `permalink` est optionnel.
 
 L'ordre des pages est purement alphabétique. Vous pouvez utiliser une numérotation (dans les noms de fichiers) pour déterminer l'ordre, par exemple: `10-typographie.md`, `20-webfonts.md`, `30-sources.md`, etc.
 
-⚠️ **Important:** La page que vous utilisez comme page d'accueil devra avoir comme valeur `permalink: index.html`. Sans cela, la page d'acceuil affiche le contenu du README avec une mise en page cassée.
+⚠️ **Important:** La page que vous utilisez comme page d'accueil devra avoir comme valeur `permalink: index.html`. Sans cela, votre page d'accueil affichera le contenu du README avec une mise en page cassée.
 
 Pour voir des exemples, vous pouvez consulter les différents dossiers sous https://github.com/coursweb
 

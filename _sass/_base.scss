@@ -29,6 +29,15 @@ body {
 }
 
 
+/*
+ * Typogryaphy
+*/
+
+.site-header,
+.secondary-menu,
+.site-footer {
+  font-family: $title-font-family;
+}
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm

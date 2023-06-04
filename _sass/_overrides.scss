@@ -2,8 +2,10 @@
  Base Style Overrides
 */
 
-h1, h2, h3, h4, h5, h6 {
-	color: $grey-color-dark;
+h1, h2, h3, h4, h5, h6,
+.page-content strong,
+.page-content b {
+	color: $grey-color-dark; /* #424242 */
 }
 
 hr {

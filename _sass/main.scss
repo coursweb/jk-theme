@@ -30,7 +30,7 @@ $contrast-color:   #f766ff; // pink
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 30%); // = #ededed;
 $grey-color-pale:  lighten($grey-color, 30%);
-$grey-color-dark:  darken($grey-color, 25%);
+$grey-color-dark:  darken($grey-color, 25%);  // = #424242;
 
 // Width of the content area
 

@@ -29,16 +29,6 @@ body {
 }
 
 
-/*
- * Typogryaphy
-*/
-
-.site-header,
-.secondary-menu,
-.site-footer {
-  font-family: $title-font-family;
-}
-
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
@@ -147,7 +137,6 @@ blockquote {
     // font-size: 140%;
     // font-size: 1.1rem;
     // font-weight: 200;
-    // font-family: $serif-font-family;
     // letter-spacing: -1px;
     font-style: normal;
     line-height: 1.4;

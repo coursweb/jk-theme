@@ -2,11 +2,8 @@
 
 // Font variables
 
-// $base-font-family:  'Source Sans Pro', Helvetica, Arial, sans-serif;
-$base-font-family: 'Yrsa', serif;
-// $title-font-family: 'DM Sans', $base-font-family;
-$title-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-// $serif-font-family: 'Cormorant Garamond', Garamond, Times, serif;
+$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+$title-font-family: $base-font-family;
 $code-font-family: Monoist-Web, monospace;
 $base-font-size:   16px;
 $base-font-weight: 400;

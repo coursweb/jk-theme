@@ -2,7 +2,7 @@
 
 Un thème Jekyll pour [cours-web.ch](https://cours-web.ch/), créé par Manuel Schmalstieg pour publier facilement des supports de cours avec Github Pages.
 
-Quelques fonctionnalités
+Un explicatif vidéo du fonctionnement de ce thème Jekyll: [https://www.youtube.com/watch?v=ISvUpva_Ovc](https://www.youtube.com/watch?v=ISvUpva_Ovc)
 
 ## Utiliser ce thème avec Github Pages
 

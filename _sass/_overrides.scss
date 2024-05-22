@@ -178,3 +178,21 @@ iframe[src*="figma.com"] {
 .cp_embed_wrapper {
   margin-bottom: 1em;
 }
+
+/*
+ Skipling for A11Y
+*/
+
+.skiplink {
+  display: inline-block;
+  color: #555;
+  background: #fff;
+  padding: .5em;
+  position: absolute;
+  left: -99999rem;
+  z-index: 100;
+}
+
+.skiplink:focus {
+  left: 0;
+}

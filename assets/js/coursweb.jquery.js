@@ -22,6 +22,13 @@ $(document).ready(function() {
     verticalFit: true
   });
 
+
+  /* Make checklists clickable */
+
+  $('.task-list-item-checkbox').removeAttr("disabled");
+
+
+
   /* Show Edit Icons when scrolling */
 
 if (document.documentElement.clientWidth > 600) {

@@ -104,7 +104,7 @@ $(document).ready(function () {
       });
 
       $(".reveal.center").css({
-        "height": "95hv"
+        "height": "95vh"
       });
 
     });
